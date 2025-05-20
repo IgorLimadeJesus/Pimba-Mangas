@@ -1,0 +1,114 @@
+@font-face {
+    font-family: 'Thin100';
+    src: url('../Fonts/Raleway/static/Raleway-Medium.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    font-family: 'Thin100', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.topbar {
+    background: white;
+    padding: 16px 32px;
+    border-bottom: 1px solid #eee;
+}
+
+.topbar-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    height: 24px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 24px;
+}
+
+.nav-links a {
+    position: relative;
+    text-decoration: none;
+    color: #222;
+    font-size: 14px;
+    padding: 6px 12px;
+    transition: color 0.3s;
+    overflow: hidden;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #222;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.nav-links a.active {
+    background-color: #f1f1f1;
+}
+
+.nav-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-outline {
+    padding: 6px 16px;
+    border: 1px solid #ccc;
+    background: white;
+    color: #222;
+    border-radius: 4px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.btn-outline:hover {
+    background: #222;
+    color: white;
+}
+
+.btn-filled {
+    padding: 6px 16px;
+    background: #222;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.btn-filled:hover {
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border: 1px solid #ccc;
+}
+
+.divider {
+    border: none;
+    height: 1px;
+    background-color: #c7c7c7;
+    margin: 0;
+}
