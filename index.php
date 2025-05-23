@@ -1,10 +1,14 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./src/styles/index.css">
+    <link rel="stylesheet" href="index.css">
     <title>Pimba Mangas</title>
 </head>
 
@@ -23,8 +27,14 @@
                 <a href="#">MANHUA</a>
             </nav>
             <div class="nav-actions">
-                <button class="btn-outline">ENTRE</button>
-                <button class="btn-filled">CRIAR CONTA</button>
+                <?php if (isset($_SESSION['usuario_nome'])): ?>
+                <p>Bem-vindo, <?= htmlspecialchars($_SESSION['usuario_nome']) ?>!</p>
+                <a href="./src/scripts/logout.php">Sair</a>
+
+            <?php else: ?>
+                <button class="btn-outline" id="btn-login">ENTRE</button>
+                <button class="btn-filled" id="btn-register">CRIAR CONTA</button>
+            <?php endif; ?>
             </div>
         </div>
     </header>
@@ -148,6 +158,42 @@
 
         <button class="more-content-btn">Clique aqui para mais</button>
     </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <div class="login-form" id="loginForm">
+        <section>
+            <button id="closeLogin" class="close-btn">×</button>
+            <label>Logar na sua Conta</label>
+            <form action="./src/scripts/login.php" method="POST">
+                <label>Email</label>
+                <input type="email" name="email-login" placeholder="Digite seu E-mail" required>
+                <label>Senha</label>
+                <input type="password" name="senha-login" placeholder="Digite sua Senha" required>
+                <a href="#">Esqueceu a senha?</a>
+                <button type="submit" class="btn-filled-form" id="btn-login">Entrar</button>
+            </form>
+        </section>
+    </div>
+
+    <div class="login-form" id="RegisterForm">
+        <section>
+            <button id="closeRegister" class="close-btn">×</button>
+
+            <label>Criar Conta</label>
+            <form action="./src/scripts/cadastro.php" method="POST">
+                <label>Nome</label>
+                <input type="text" name="nome-register" placeholder="Digite seu Nome" required>
+                <label>Email</label>
+                <input type="email" name="email-register" placeholder="Digite seu E-mail" required>
+                <label>Senha</label>
+                <input type="password" name="senha-register" placeholder="Digite sua Senha" required>
+                <a href="#">Esqueceu a senha?</a>
+                <button type="submit" class="btn-filled-form" id="btn-register">Entrar</button>
+            </form>
+        </section>
+    </div>
+
     <footer class="footer">
         <div class="footer-icons">
             <a href="#"><img src="./src/img/twitter.svg" alt="X" /></a>
@@ -161,6 +207,10 @@
             permitida nos termos da cláusula de uso justo da Lei de Direitos Autorais.
         </p>
     </footer>
+
+
+    <script src="./src/scripts/forms-script.js"></script>
+
 </body>
 
 </html>
