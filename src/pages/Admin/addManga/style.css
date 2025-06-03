@@ -13,6 +13,7 @@ body {
 }
 
 .container {
+    margin-top: 15vh;
     flex: 1;
     display: flex;
     justify-content: center;
@@ -107,4 +108,42 @@ button {
 
 button:hover {
     background-color: #444;
+}
+
+@media (max-width: 1366px) {
+    .container {
+        padding: 20px 0;
+    }
+    .form {
+        max-width: 350px;
+        padding: 15px;  
+    }
+    .image-upload img {
+        width: 220px;
+        height: 220px;
+        max-width: 220px;
+        max-height: 220px;
+    }
+}
+
+@media (max-width: 720px) {
+    .container {
+        padding: 10px 0;
+    }
+    .form {
+        flex-direction: column;
+        max-width: 100%;
+        padding: 10px;
+        gap: 20px;
+    }
+    .image-upload img {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        max-height: 200px;
+    }
+    .row {
+        flex-direction: column;
+        gap: 5px;
+    }
 }
