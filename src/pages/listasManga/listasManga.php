@@ -24,7 +24,7 @@ require_once 'C:\xampp\htdocs\Pimba-Mangas\src\scripts\conexao.php';
                 <a href="http://localhost/Pimba-Mangas/Index.php" class="active">HOME</a>
                 <a href="#">GÊNEROS</a>
                 <a href="#">CONTATO</a>
-                <a href="#">MANGÁS</a>
+                <a href="http://localhost/Pimba-Mangas/src/pages/listasManga/listasManga.php">MANGÁS</a>
             </nav>
             <div class="nav-actions">
                 <?php if (isset($_SESSION['usuario_nome'])): ?>
@@ -52,12 +52,12 @@ require_once 'C:\xampp\htdocs\Pimba-Mangas\src\scripts\conexao.php';
         if ($result && mysqli_num_rows($result) > 0):
             while ($manga = mysqli_fetch_assoc($result)):
         ?>
-                <div class="card-manga">
-                    <img src="/Pimba-Mangas/src/pages/Admin/addManga/<?= htmlspecialchars($manga['img_dir']) ?>" alt="Capa de <?= htmlspecialchars($manga['titulo']) ?>">
-                    <h3><?= htmlspecialchars($manga['titulo']) ?></h3>
-                    <p><?= htmlspecialchars($manga['resumo']) ?></p>
-                </div>
-        <?php
+            <a href="/Pimba-Mangas/src/pages/manga/manga.php?id=<?= urlencode($manga['id']) ?>" class="card-manga">
+                <img src="/Pimba-Mangas/src/pages/Admin/addManga/<?= htmlspecialchars($manga['img_dir']) ?>" alt="Capa de <?= htmlspecialchars($manga['titulo']) ?>">
+                <h3><?= htmlspecialchars($manga['titulo']) ?></h3>
+                <p><?= htmlspecialchars($manga['resumo']) ?></p>
+            </a>
+        <?php   
             endwhile;
         else:
             echo "<p>Nenhum mangá cadastrado ainda.</p>";

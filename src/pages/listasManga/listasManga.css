@@ -21,6 +21,21 @@ main {
     flex: 1;
 }
 
+.card-manga {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-manga:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
 .manga-container {
     max-width: 1200px;
     margin: 100px auto 40px;
