@@ -9,6 +9,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="nav-bar.css">
     <title>Pimba Mangas</title>
 </head>
 
@@ -16,25 +17,25 @@ session_start();
     <header class="topbar">
         <div class="topbar-inner">
             <div class="logo">
-                <a href="/"><img src="./src/img/Logo.png" alt="Logo" height="24" /></a>
+                <a href="#"><img src="./src/img/Logo.png" alt="Logo" height="24" /></a>
             </div>
             <nav class="nav-links">
-                <a href="#" class="active">HOME</a>
+                <a href="http://localhost/Pimba-Mangas/Index.php" class="active">HOME</a>
                 <a href="#">GÊNEROS</a>
                 <a href="#">CONTATO</a>
-                <a href="#">MANGÁS</a>
-                <a href="#">MANHWAS</a>
-                <a href="#">MANHUA</a>
+                <a href="http://localhost/Pimba-Mangas/src/pages/listasManga/listasManga.php">MANGÁS</a>
             </nav>
             <div class="nav-actions">
                 <?php if (isset($_SESSION['usuario_nome'])): ?>
-                <p>Bem-vindo, <?= htmlspecialchars($_SESSION['usuario_nome']) ?>!</p>
+                <p>Bem-vindo,
+                    <?= htmlspecialchars($_SESSION['usuario_nome']) ?>!
+                </p>
                 <a href="./src/scripts/logout.php">Sair</a>
 
-            <?php else: ?>
+                <?php else: ?>
                 <button class="btn-outline" id="btn-login">ENTRE</button>
                 <button class="btn-filled" id="btn-register">CRIAR CONTA</button>
-            <?php endif; ?>
+                <?php endif; ?>
             </div>
         </div>
     </header>
@@ -45,12 +46,6 @@ session_start();
         <P>de P.I.M.B.A EVOLUTION</P>
     </div>
     <hr class="divider">
-
-    <div class="features">
-        <img src="./src/img/default-image.jpg" alt="Feature 1" class="feature-image">
-        <img src="./src/img/default-image.jpg" alt="Feature 2" class="feature-image">
-    </div>
-    <hr class="divider">
     <div class="latest-release-section">
         <h2>ÚLTIMOS LANÇAMENTOS</h2>
         <p class="subheading">ÚLTIMOS MANGÁS LANÇADOS</p>
@@ -58,57 +53,57 @@ session_start();
         <div class="release-grid">
             <!-- Card -->
             <div class="release-card">
-                <img src="./src/img/default-image.jpg" alt="default" class="release-image" />
-                <h3>Title</h3>
+                <img src="./src/img/boku-no-pico-manga.png" alt="default" class="release-image" />
+                <h3>Boku no Pico</h3>
                 <p>Body text for whatever you'd like to say. Add main takeaway points, quotes, anecdotes, or even a very
                     very short story.</p>
                 <div class="stars">⭐⭐⭐⭐⭐</div>
             </div>
             <div class="release-card">
-                <img src="./src/img/default-image.jpg" alt="default" class="release-image" />
-                <h3>Title</h3>
+                <img src="./src/img/dbz-maga.jpg" alt="default" class="release-image" />
+                <h3>Dragon Ball Z</h3>
                 <p>Body text for whatever you'd like to say. Add main takeaway points, quotes, anecdotes, or even a very
                     very short story.</p>
                 <div class="stars">⭐⭐⭐⭐⭐</div>
             </div>
             <div class="release-card">
-                <img src="./src/img/default-image.jpg" alt="default" class="release-image" />
-                <h3>Title</h3>
+                <img src="./src/img/gurren-lagan.webp" alt="default" class="release-image" />
+                <h3>Teggen Topa Gurren Lagan</h3>
                 <p>Body text for whatever you'd like to say. Add main takeaway points, quotes, anecdotes, or even a very
                     very short story.</p>
                 <div class="stars">⭐⭐⭐⭐⭐</div>
             </div>
             <div class="release-card">
-                <img src="./src/img/default-image.jpg" alt="default" class="release-image" />
-                <h3>Title</h3>
+                <img src="./src/img/jujutsu-manga.jpg" alt="default" class="release-image" />
+                <h3>Jujutsu Kaisen</h3>
                 <p>Body text for whatever you'd like to say. Add main takeaway points, quotes, anecdotes, or even a very
                     very short story.</p>
                 <div class="stars">⭐⭐⭐⭐⭐</div>
             </div>
             <div class="release-card">
-                <img src="./src/img/default-image.jpg" alt="default" class="release-image" />
-                <h3>Title</h3>
+                <img src="./src/img/one-piece-manga.jpg" alt="default" class="release-image" />
+                <h3>One Piece</h3>
                 <p>Body text for whatever you'd like to say. Add main takeaway points, quotes, anecdotes, or even a very
                     very short story.</p>
                 <div class="stars">⭐⭐⭐⭐⭐</div>
             </div>
             <div class="release-card">
-                <img src="./src/img/default-image.jpg" alt="default" class="release-image" />
-                <h3>Title</h3>
+                <img src="./src/img/naruto-manga.jpg" alt="default" class="release-image" />
+                <h3>Naruto</h3>
                 <p>Body text for whatever you'd like to say. Add main takeaway points, quotes, anecdotes, or even a very
                     very short story.</p>
                 <div class="stars">⭐⭐⭐⭐⭐</div>
             </div>
             <div class="release-card">
-                <img src="./src/img/default-image.jpg" alt="default" class="release-image" />
-                <h3>Title</h3>
+                <img src="./src/img/one-piece-manga.jpg" alt="default" class="release-image" />
+                <h3>One Piece</h3>
                 <p>Body text for whatever you'd like to say. Add main takeaway points, quotes, anecdotes, or even a very
                     very short story.</p>
                 <div class="stars">⭐⭐⭐⭐⭐</div>
             </div>
             <div class="release-card">
-                <img src="./src/img/default-image.jpg" alt="default" class="release-image" />
-                <h3>Title</h3>
+                <img src="./src/img/gurren-lagan.webp" alt="default" class="release-image" />
+                <h3>Teggen Topa Gurren Lagan</h3>
                 <p>Body text for whatever you'd like to say. Add main takeaway points, quotes, anecdotes, or even a very
                     very short story.</p>
                 <div class="stars">⭐⭐⭐⭐⭐</div>
@@ -125,9 +120,9 @@ session_start();
         <div class="most-read-list">
             <!-- Item -->
             <div class="most-read-item">
-                <img src="./src/img/default-image.jpg" alt="default" class="read-image" />
+                <img src="./src/img/frieren.jpg" alt="default" class="read-image" />
                 <div class="read-content">
-                    <h3>Title</h3>
+                    <h3>Sou Sou no Frieren</h3>
                     <p>Body text for whatever you'd like to say. Add main takeaway points, quotes, anecdotes, or even a
                         very very short story.</p>
                     <button class="chapter-button">Capítulo 000</button>
@@ -136,9 +131,9 @@ session_start();
 
             <!-- Repetir os próximos -->
             <div class="most-read-item">
-                <img src="./src/img/default-image.jpg" alt="default" class="read-image" />
+                <img src="./src/img/dungeon-meshi.jpg" alt="default" class="read-image" />
                 <div class="read-content">
-                    <h3>Title</h3>
+                    <h3>Dungeon Meshi</h3>
                     <p>Body text for whatever you'd like to say. Add main takeaway points, quotes, anecdotes, or even a
                         very very short story.</p>
                     <button class="chapter-button">Capítulo 000</button>
@@ -146,9 +141,9 @@ session_start();
             </div>
 
             <div class="most-read-item">
-                <img src="./src/img/default-image.jpg" alt="default" class="read-image" />
+                <img src="./src/img/one-punch-man.jpg" alt="default" class="read-image" />
                 <div class="read-content">
-                    <h3>Title</h3>
+                    <h3>One Punch Man</h3>
                     <p>Body text for whatever you'd like to say. Add main takeaway points, quotes, anecdotes, or even a
                         very very short story.</p>
                     <button class="chapter-button">Capítulo 000</button>

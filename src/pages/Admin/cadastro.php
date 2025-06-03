@@ -1,12 +1,12 @@
 <?php
-include_once("conexao.php");
+include_once("../../scripts/conexao.php");
 
     $nome = $_POST['nome-register'];
     $email = $_POST['email-register'];
     $senha = $_POST['senha-register'];
     $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO users (nome, email, senha) VALUES (?, ?, ?)";    
+    $sql = "INSERT INTO usersadm (nome, email, senha) VALUES (?, ?, ?)";    
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("sss", $nome, $email, $senhaHash);
 
